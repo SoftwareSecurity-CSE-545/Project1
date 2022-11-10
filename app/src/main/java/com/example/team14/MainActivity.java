@@ -6,11 +6,13 @@ import java.util.Date;
 import java.util.logging.Logger;
 
 import android.content.BroadcastReceiver;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView;
@@ -60,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void broadcastListener(View view) {
         Logger.getAnonymousLogger().info("inside logger");
+    }
+
+    public void gotoContacts(View view) {
+        Intent intent = new Intent(this, ContactActivity.class);
+        startActivity(intent);
     }
 
     class CountDownRunner implements Runnable{
