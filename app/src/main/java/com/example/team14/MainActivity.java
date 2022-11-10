@@ -28,7 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void broadcastListener(View view) {
-        Logger.getAnonymousLogger().info("inside logger");
+        Logger.getAnonymousLogger().info("Broadcast: In listener");
+        Intent intent = new Intent();
+        intent.setAction("com.example.homework");
+        sendBroadcast(intent);
     }
 
     public void gotoContacts(View view) {
