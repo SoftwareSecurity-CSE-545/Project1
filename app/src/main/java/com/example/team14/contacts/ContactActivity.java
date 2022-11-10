@@ -1,16 +1,17 @@
-package com.example.team14;
+package com.example.team14.contacts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Bundle;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
+
+import com.example.team14.R;
 
 import java.util.ArrayList;
 import java.util.Random;

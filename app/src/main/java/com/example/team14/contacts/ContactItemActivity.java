@@ -1,8 +1,10 @@
-package com.example.team14;
+package com.example.team14.contacts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.team14.R;
 
 public class ContactItemActivity extends AppCompatActivity {
 

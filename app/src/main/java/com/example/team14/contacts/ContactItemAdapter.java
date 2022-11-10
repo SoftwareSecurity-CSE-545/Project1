@@ -1,4 +1,4 @@
-package com.example.team14;
+package com.example.team14.contacts;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.team14.R;
 
 import java.util.ArrayList;
 
