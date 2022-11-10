@@ -26,16 +26,16 @@ public class MainActivity extends AppCompatActivity {
         buttonServiceToggle = findViewById(R.id.switch1);
 
 
-        buttonServiceToggle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Thread myThread = null;
-                Runnable myRunnableThread = new CountDownRunner();
-                myThread= new Thread(myRunnableThread);
-                if (buttonServiceToggle.isChecked())
-                    myThread.start();
-                else
-                    myThread.start();
+        buttonServiceToggle.setOnClickListener(view -> {
+            Thread myThread = null;
+            Runnable myRunnableThread = new CountDownRunner();
+            myThread= new Thread(myRunnableThread);
+            if (buttonServiceToggle.isChecked()) {
+                myThread.start();
+                Logger.getAnonymousLogger().info("Service started");
+            } else {
+                myThread.interrupt();
+                Logger.getAnonymousLogger().info("Service stopped");
             }
         });
 
