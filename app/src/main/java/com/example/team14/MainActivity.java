@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.example.team14.contacts.ContactActivity;
+
 public class MainActivity extends AppCompatActivity {
     TextView textView;
 

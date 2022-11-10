@@ -1,4 +1,4 @@
-package com.example.team14;
+package com.example.team14.contacts;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

@@ -1,4 +1,4 @@
-package com.example.team14;
+package com.example.team14.contacts;
 
 public class ContactItem {
     private String name;
