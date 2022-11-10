@@ -1,106 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView3"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
-        android:text="Team 14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:text="Team 14"/>
 
     <Button
         android:id="@+id/button"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Broadcast Activity"
-        android:onClick="broadcastListener"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="255dp" />
+        android:layout_below="@+id/textView3"
+        android:onClick="broadcastListener"/>
 
     <Button
         android:id="@+id/button2"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Service Activity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="311dp"
-        android:onClick="toService"/>
+        android:layout_below="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
         android:id="@+id/button3"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Content Provider Activity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="372dp" />
+        android:layout_below="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/editTextTextPersonName7"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="@integer/material_motion_duration_medium_1"
-        android:textAlignment="center"
         android:inputType="textPersonName"
         android:text="Aditya Borikar : aborika1@asu.edu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="63dp" />
+        android:layout_below="@+id/button3" />
 
     <TextView
         android:id="@+id/editTextTextPersonName8"
         android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:ems="@integer/material_motion_duration_medium_1"
-        android:textAlignment="center"
         android:inputType="textPersonName"
-        android:text="Pratyush Pandey : ppande28@asu.edu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="116dp" />
+        android:layout_below="@+id/editTextTextPersonName7"
+        android:text="Pratyush Pandey : ppande28@asu.edu" />
 
     <TextView
         android:id="@+id/editTextTextPersonName9"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="@integer/material_motion_duration_medium_1"
-        android:textAlignment="center"
+        android:ems="10"
         android:inputType="textPersonName"
-        android:text="Sujatha Pushpraj : spushpar@asu.edu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="170dp" />
+        android:layout_below="@+id/editTextTextPersonName8"
+        android:text="Sujatha Pushpraj : spushpar@asu.edu" />
 
-    <LinearLayout
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:text="Use Service Activity"
+        android:paddingHorizontal="50dp"
+        android:layout_below="@+id/editTextTextPersonName9"/>
 
-        <Button
-            android:id="@+id/contactsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="gotoContacts"
-            android:text="Contacts"></Button>
-    </LinearLayout>
+    <Button
+        android:id="@+id/contactsButton"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="gotoContacts"
+        android:layout_below="@+id/switch1"
+        android:text="Contacts"/>
 
-</LinearLayout>
+</RelativeLayout>
