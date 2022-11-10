@@ -12,18 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Team14"
         tools:targetApi="31">
+        <service
+            android:name=".CurrentTimeService"
+            android:enabled="true"
+            android:exported="true"></service>
+
         <activity
-            android:name=".contact_item"
-            android:exported="false" />
+            android:name=".ServiceActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
         <provider
-            android:name=".ContactsContentProvider"
+            android:name=".contacts.ContactsContentProvider"
             android:authorities="com.example.project1"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name=".ContactActivity"
+            android:name=".contacts.ContactActivity"
             android:exported="false" />
 
         <activity

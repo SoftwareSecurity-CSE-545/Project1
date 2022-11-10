@@ -1,4 +1,5 @@
 package com.example.team14;
+
 import android.app.Service;
 import android.content.Intent;
 import android.icu.util.Calendar;
@@ -33,6 +34,13 @@ public class CurrentTimeService extends Service {
     }
 
     @Override
+    public boolean stopService(Intent name) {
+        mHandlerThread.interrupt();
+        running = false;
+        return super.stopService(name);
+    }
+
+    @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         mHandlerThread = new HandlerThread("LocalServiceThread");
         mHandlerThread.start();
@@ -41,7 +49,6 @@ public class CurrentTimeService extends Service {
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-//                int i = 10;
                 while(running){
                     new Handler(Looper.getMainLooper()).post(new Runnable() {
                         @Override
@@ -52,11 +59,10 @@ public class CurrentTimeService extends Service {
                         }
                     });
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }finally {
-                        //i--;
                     }
                 }
             }

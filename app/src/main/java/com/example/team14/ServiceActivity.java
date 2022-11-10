@@ -4,9 +4,11 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
+import android.os.Build;
 import android.view.View;
+
+import java.util.logging.Logger;
 
 public class ServiceActivity extends AppCompatActivity {
 
@@ -23,7 +25,7 @@ public class ServiceActivity extends AppCompatActivity {
             startService(intent);
         }
         else {
-            onDestroy();
+            stopService(intent);
             finish();
         }
     }

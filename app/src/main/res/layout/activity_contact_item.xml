@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:padding="10dp"
     android:orientation="vertical"
-    tools:context=".ContactItemActivity">
+    tools:context=".contacts.ContactItemActivity">
 
     <TextView
         android:id="@+id/contact_item_name"
