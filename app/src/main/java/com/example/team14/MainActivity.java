@@ -5,14 +5,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Logger;
 
-import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView;
@@ -41,14 +39,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonService.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Thread myThread = null;
-                Runnable myRunnableThread = new CountDownRunner();
-                myThread= new Thread(myRunnableThread);
-                myThread.start();
-            }
+        buttonService.setOnClickListener(view -> {
+            Thread myThread = null;
+            Runnable myRunnableThread = new CountDownRunner();
+            myThread= new Thread(myRunnableThread);
+            myThread.start();
         });
         textView = findViewById(R.id.textView5);
         Date currentTime = Calendar.getInstance().getTime();
@@ -84,31 +79,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void onClickServiceActivity() {
-        runOnUiThread(new Runnable() {
-            public void run() {
-                try{
-                    textView = findViewById(R.id.textView5);
-                    Date currentTime = Calendar.getInstance().getTime();
-
-                    Date dt = new Date();
-                    int hours = dt.getHours();
-                    int minutes = dt.getMinutes();
-                    int seconds = dt.getSeconds();
-                    String curTime = hours + ":" + minutes;
-                    textView.setText(curTime);
-                }catch (Exception e) {}
-            }
+        runOnUiThread(() -> {
+            try{
+                textView = findViewById(R.id.textView5);
+                Date dt = new Date();
+                int hours = dt.getHours();
+                int minutes = dt.getMinutes();
+                int seconds = dt.getSeconds();
+                String curTime = hours + ":" + minutes;
+                textView.setText(curTime);
+            }catch (Exception e) {}
         });
     }
-//    private void chaneTime() {
-//        run_on_thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                textView = findViewById(R.id.textView5);
-//                Date currentTime = Calendar.getInstance().getTime();
-//
-//                textView.setText(currentTime.toString());
-//            }
-//        })
-//    }
 }
