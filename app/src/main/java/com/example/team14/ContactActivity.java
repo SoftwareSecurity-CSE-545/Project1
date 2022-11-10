@@ -34,11 +34,18 @@ public class ContactActivity extends AppCompatActivity {
     }
 
     public void onInsert(View view) {
+        String name = mName.getText().toString();
+        String mail = mId.getText().toString();
+        String phone = mPhone.getText().toString();
+        if(name.isEmpty() || mail.isEmpty() || phone.isEmpty()) {
+            Toast.makeText(this,"Failed! Cannot add contact with empty field(s)",Toast.LENGTH_SHORT).show();
+            return;
+        }
         ContentValues values  = new ContentValues();
         values.put(ContactsDatabase.ID,new Random().nextInt(100));
-        values.put(ContactsDatabase.NAME,mName.getText().toString());
-        values.put(ContactsDatabase.PHONE,mPhone.getText().toString());
-        values.put(ContactsDatabase.MAIL,mId.getText().toString());
+        values.put(ContactsDatabase.NAME, name);
+        values.put(ContactsDatabase.PHONE, phone);
+        values.put(ContactsDatabase.MAIL, mail);
 
         getApplicationContext().getContentResolver().insert(ContactsContentProvider.CONTENT_URI,values);
         Toast.makeText(this,"Contact added successfully",Toast.LENGTH_SHORT).show();
