@@ -79,15 +79,6 @@
         android:text="TextView"
         android:layout_below="@+id/editTextTextPersonName9" />
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_centerHorizontal="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Use Service Activity"
-        android:paddingHorizontal="50dp"
-        android:layout_below="@+id/textView5"/>
-
     <Button
         android:id="@+id/contactsButton"
         android:layout_centerHorizontal="true"
