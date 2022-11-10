@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
 
     <TextView
@@ -17,6 +18,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/button"
@@ -36,7 +38,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="311dp" />
+        tools:layout_editor_absoluteY="311dp"
+        android:onClick="toService"/>
 
     <Button
         android:id="@+id/button3"
@@ -50,10 +53,10 @@
 
     <TextView
         android:id="@+id/editTextTextPersonName7"
-        android:layout_width="409dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="20"
-
+        android:ems="@integer/material_motion_duration_medium_1"
+        android:textAlignment="center"
         android:inputType="textPersonName"
         android:text="Aditya Borikar : aborika1@asu.edu"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,9 +66,10 @@
 
     <TextView
         android:id="@+id/editTextTextPersonName8"
-        android:layout_width="409dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:ems="@integer/material_motion_duration_medium_1"
+        android:textAlignment="center"
         android:inputType="textPersonName"
         android:text="Pratyush Pandey : ppande28@asu.edu"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,9 +79,10 @@
 
     <TextView
         android:id="@+id/editTextTextPersonName9"
-        android:layout_width="409dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:ems="@integer/material_motion_duration_medium_1"
+        android:textAlignment="center"
         android:inputType="textPersonName"
         android:text="Sujatha Pushpraj : spushpar@asu.edu"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,29 +90,17 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="170dp" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="483dp" />
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Service Activity" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <Button
             android:id="@+id/contactsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contacts"
-            android:onClick="gotoContacts"></Button>
+            android:onClick="gotoContacts"
+            android:text="Contacts"></Button>
     </LinearLayout>
 
 </LinearLayout>
