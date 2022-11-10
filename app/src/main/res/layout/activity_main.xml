@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         android:text="Service Activity"
         android:layout_below="@+id/button"
+        android:onClick="toService"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
