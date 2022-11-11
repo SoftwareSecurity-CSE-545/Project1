@@ -26,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(currentTime.toString());
     }
 
+    @Override
+    protected void onResume() {
+        Date currentTime = Calendar.getInstance().getTime();
+        textView.setText(currentTime.toString());
+        super.onResume();
+    }
 
     public void broadcastListener(View view) {
         Intent intent = new Intent(this, BroadcastActivity.class);
