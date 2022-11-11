@@ -9,39 +9,15 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
-        android:text="Team 14"/>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Broadcast Activity"
-        android:layout_below="@+id/textView3"
-        android:onClick="broadcastListener"/>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Service Activity"
-        android:layout_below="@+id/button"
-        android:onClick="toService"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Content Provider Activity"
-        android:layout_below="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:text="Team 14"
+        android:textAlignment="center"
+        android:textFontWeight="200"
+        android:textSize="16pt"
+        android:textColor="@color/purple_700"/>
 
     <TextView
         android:id="@+id/editTextTextPersonName7"
@@ -50,7 +26,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:text="Aditya Borikar : aborika1@asu.edu"
-        android:layout_below="@+id/button3" />
+        android:layout_below="@+id/textView3" />
 
     <TextView
         android:id="@+id/editTextTextPersonName8"
@@ -68,15 +44,27 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:layout_below="@+id/editTextTextPersonName8"
-        android:text="Sujatha Pushparaj : spushpar@asu.edu" />
+        android:text="Sujatha Pushparaj : spushpar@asu.edu"
+        android:layout_marginBottom="10pt"/>
 
-    <TextView
-        android:id="@+id/textView5"
+    <Button
+        android:id="@+id/button"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_below="@+id/editTextTextPersonName9" />
+        android:text="Broadcast Activity"
+        android:layout_below="@+id/editTextTextPersonName9"
+        android:onClick="broadcastListener"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Service Activity"
+        android:layout_below="@+id/button"
+        android:onClick="toService"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
         android:id="@+id/contactsButton"
@@ -84,6 +72,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="gotoContacts"
-        android:text="Contacts"/>
+        android:layout_below="@+id/button2"
+        android:text="Content Provider Activity"
+        android:layout_marginBottom="10pt"/>
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/contactsButton" />
 
 </RelativeLayout>
