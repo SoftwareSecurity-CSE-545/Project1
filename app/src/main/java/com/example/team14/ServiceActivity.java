@@ -7,17 +7,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Build;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.logging.Logger;
 
 public class ServiceActivity extends AppCompatActivity {
 
     Intent intent;
+    static TextView timeServiceTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service);
+        ServiceActivity.timeServiceTextView = findViewById(R.id.TimeServiceTextView);
+    }
+
+    public static void updateTimeOnService(String data) {
+        ServiceActivity.timeServiceTextView.setText(data);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.R)
@@ -29,7 +36,6 @@ public class ServiceActivity extends AppCompatActivity {
         }
         else {
             stopService(intent);
-            finish();
         }
     }
 

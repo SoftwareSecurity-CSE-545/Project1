@@ -2,14 +2,14 @@ package com.example.team14;
 
 import android.app.Service;
 import android.content.Intent;
-import android.icu.util.Calendar;
+import java.util.Calendar;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
 import android.os.Looper;
-import android.widget.Toast;
 import java.util.Random;
+import java.util.logging.Logger;
 
 public class CurrentTimeService extends Service {
     private final IBinder mBinder = new LocalBinder();
@@ -53,13 +53,16 @@ public class CurrentTimeService extends Service {
                     new Handler(Looper.getMainLooper()).post(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(CurrentTimeService.this, "current time " +
-                                    Calendar.getInstance().getTime(), Toast.LENGTH_SHORT).show();
-
+                            Calendar calendar = Calendar.getInstance();
+                            int hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
+                            int minOfDay = calendar.get(Calendar.MINUTE);
+                            String data = new String(hourOfDay + ":" + minOfDay);
+                            Logger.getAnonymousLogger().info("Updating time: " + data);
+                            ServiceActivity.updateTimeOnService(data);
                         }
                     });
                     try {
-                        Thread.sleep(2000);
+                        Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }finally {
