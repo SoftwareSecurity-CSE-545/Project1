@@ -12,6 +12,8 @@ import java.util.logging.Logger;
 
 public class ServiceActivity extends AppCompatActivity {
 
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +22,8 @@ public class ServiceActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.R)
     public void onStartService(View view) {
-        Intent intent = new Intent(this, CurrentTimeService.class);
+        Logger.getAnonymousLogger().info("ServiceActivity: onStart");
+        intent = new Intent(this, CurrentTimeService.class);
         if (view.getStateDescription().equals("ON")) {
             startService(intent);
         }
@@ -28,5 +31,12 @@ public class ServiceActivity extends AppCompatActivity {
             stopService(intent);
             finish();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        stopService(intent);
+        finish();
+        super.onBackPressed();
     }
 }
