@@ -66,10 +66,9 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="textPersonName"
         android:layout_below="@+id/editTextTextPersonName8"
-        android:text="Sujatha Pushpraj : spushpar@asu.edu" />
+        android:text="Sujatha Pushparaj : spushpar@asu.edu" />
 
     <TextView
         android:id="@+id/textView5"
@@ -85,7 +84,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="gotoContacts"
-        android:layout_below="@+id/switch1"
         android:text="Contacts"/>
 
 </RelativeLayout>

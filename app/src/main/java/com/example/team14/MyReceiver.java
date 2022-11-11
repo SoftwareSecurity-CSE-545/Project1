@@ -12,6 +12,7 @@ public class MyReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Logger.getAnonymousLogger().info("Broadcast: In Receiver");
-        Toast.makeText(context, "Broadcast done", Toast.LENGTH_LONG).show();
+        String msg = intent.getStringExtra("message");
+        Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
     }
 }
