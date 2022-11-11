@@ -11,8 +11,7 @@ public class MyReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // TODO: This method is called when the BroadcastReceiver is receiving
         Logger.getAnonymousLogger().info("Broadcast: In Receiver");
-        Toast.makeText(context, "Intent Detected.", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "Broadcast done", Toast.LENGTH_LONG).show();
     }
 }

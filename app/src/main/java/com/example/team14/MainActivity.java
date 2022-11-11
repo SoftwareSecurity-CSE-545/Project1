@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Logger.getAnonymousLogger().info("Broadcast: In listener");
         Intent intent = new Intent();
         intent.setAction("com.example.homework");
+        intent.setPackage("com.example.team14");
         sendBroadcast(intent);
     }
 
